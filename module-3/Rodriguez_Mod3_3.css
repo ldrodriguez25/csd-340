@@ -1,0 +1,77 @@
+/*
+    Name: Luis Rodriguez
+    Date: August 23, 2026
+    Assignment: 3.3 Build a Web Page Exercise - Part 3
+*/
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.hidden-heading {
+    display: none;
+}
+
+#left,
+#right {
+    width: 45%;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+}
+
+#bottom {
+    width: 100%;
+    margin-top: 60%;
+    float: right;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+#left h3 {
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#right h3 {
+    border: 1px dashed red;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+ol {
+    font-weight: 300;
+    padding: 10px;
+}
+
+#left ol {
+    border: 1px solid red;
+    border-radius: 15px;
+    list-style-position: inside;
+}
+
+#right ol {
+    border: 1px dashed red;
+    border-radius: 15px;
+    list-style-type: upper-roman;
+    list-style-position: inside;
+}
+
+a:hover {
+    text-decoration: underline;
+}
