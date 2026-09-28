@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--
+        Luis Rodriguez
+        September 27, 2026
+        Assignment 9.3: JavaScript - Part 1
+    -->
+
+    <meta charset="UTF-8">
+
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <script>
+        var firstVariableValue = "journey";
+        var secondVariableValue = "challenge";
+        var thirdVariableValue = "success";
+        var fourthVariableValue = "future";
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+    <p>
+        Everyone has a different
+        <span id="firstWord">________</span>
+        that helps shape who they become.
+        <br>
+        <button type="button"
+            onclick="document.getElementById('firstWord').innerHTML = firstVariableValue">
+            Reveal First Word
+        </button>
+    </p>
+
+    <p>
+        Along the way, everyone faces a
+        <span id="secondWord">________</span>.
+        These experiences can teach us important lessons.
+        <br>
+        <button type="button"
+            onclick="document.getElementById('secondWord').innerHTML = secondVariableValue">
+            Reveal Second Word
+        </button>
+    </p>
+
+    <p>
+        With hard work and determination, those challenges can lead to
+        <span id="thirdWord">________</span>.
+        <br>
+        <button type="button"
+            onclick="document.getElementById('thirdWord').innerHTML = thirdVariableValue">
+            Reveal Third Word
+        </button>
+    </p>
+
+    <p>
+        Looking ahead, I am excited about what the
+        <span id="fourthWord">________</span>
+        may bring.
+        <br>
+        <button type="button"
+            onclick="document.getElementById('fourthWord').innerHTML = fourthVariableValue">
+            Reveal Fourth Word
+        </button>
+    </p>
+
+</body>
+</html>
