@@ -1,0 +1,161 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Name: Luis Rodriguez
+        Date: October 11, 2026
+        Assignment: JavaScript Exercise, Part 3 - 11.2
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        h1 {
+            color: #25476a;
+        }
+
+        .todo-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 95%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 14px;
+            margin: 4px 2px;
+            border: none;
+            border-radius: 5px;
+            background-color: #25476a;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #396b99;
+        }
+
+        #todoList {
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <div class="todo-container">
+        <h2>To Do List</h2>
+
+        <p>Enter a task below and select Add to add it to your list.</p>
+
+        <input type="text" id="taskInput" placeholder="Enter a task">
+
+        <div>
+            <button onclick="addItem()">Add</button>
+            <button onclick="deleteItem()">Delete Last Entry</button>
+            <button onclick="sortItems()">Sort</button>
+        </div>
+
+        <h3>Things to Do:</h3>
+        <div id="todoList">Your list is currently empty.</div>
+    </div>
+
+    <script>
+        // Array to store the user's tasks.
+        let tasks = [];
+
+        // Add an item to the array.
+        function addItem() {
+            const input = document.getElementById("taskInput");
+            const task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            tasks.push(task);
+            alert('Added: "' + task + '"');
+
+            input.value = "";
+            displayItems();
+            input.focus();
+        }
+
+        // Delete the last item from the array.
+        function deleteItem() {
+            if (tasks.length === 0) {
+                alert("There are no tasks to delete.");
+                return;
+            }
+
+            const deletedTask = tasks.pop();
+            alert('Deleted: "' + deletedTask + '"');
+
+            displayItems();
+        }
+
+        // Display the contents of the array.
+        function displayItems() {
+            const list = document.getElementById("todoList");
+
+            if (tasks.length === 0) {
+                list.textContent = "Your list is currently empty.";
+                return;
+            }
+
+            list.innerHTML = "";
+
+            const orderedList = document.createElement("ol");
+
+            tasks.forEach(function(task) {
+                const listItem = document.createElement("li");
+                listItem.textContent = task;
+                orderedList.appendChild(listItem);
+            });
+
+            list.appendChild(orderedList);
+        }
+
+        // Sort the array alphabetically.
+        function sortItems() {
+            if (tasks.length === 0) {
+                alert("There are no tasks to sort.");
+                return;
+            }
+
+            tasks.sort(function(a, b) {
+                return a.localeCompare(b);
+            });
+
+            alert("Your to-do list has been sorted alphabetically.");
+            displayItems();
+        }
+    </script>
+</body>
+</html>
+```
